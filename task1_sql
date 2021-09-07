@@ -1,0 +1,69 @@
+CREATE DATABASE college;
+use college;
+
+#mentor table
+CREATE TABLE mentor(mentor_id INTEGER primary key, mentor_name varchar(20));
+INSERT INTO mentor values(1,"mentor1"),(2,"mentor2"),(3,"mentor3"),(4,"mentor4"),(5,"mentor5");
+SELECT * from mentor;
+
+#users table
+CREATE TABLE users(user_id INTEGER PRIMARY KEY, user_name varchar(25), email varchar(20),phone_no INTEGER,mentor_id INTEGER,FOREIGN KEY (mentor_id) references mentor(mentor_id));
+INSERT INTO users values(1,"abc1","abc1@gmail.com","630630601",3),(2,"abc2","abc2@gmail.com","630630602",4),(3,"abc3","abc3@gmail.com","630630603",3),(4,"abc4","abc4@gmail.com","630630604",2),(5,"abc5","abc5@gmail.com","630630605",1);
+INSERT INTO  users (user_id,user_name,email,phone_no) values(6,"abc6","abc6@gmail.com",630630606);
+INSERT INTO  users values(7,"abc7","abc7@gmail.com",630630607,2);
+SELECT * from users;
+
+#courses table
+CREATE TABLE courses(course_id INTEGER PRIMARY KEY,course_name varchar(20));
+INSERT INTO courses values(1,"DSA"),(2,"python"),(3,"java"),(4,"c"),(5,"SQL");
+SELECT * from courses;
+
+#topics table 
+CREATE TABLE  topics(course_id INTEGER, topic_name varchar(20),FOREIGN KEY (course_id) references courses(course_id));
+INSERT INTO topics values(1,"stack"),(1,"queue"),(1,"tree"),(1,"graph"),(2,"basics"),(2,"numpy"),(2,"pandas"),(3,"oops"),(4,"basics in C");
+INSERT INTO topics values(5,"CRED operations");
+SELECT * from topics;
+
+#student activated courses table
+CREATE TABLE  student_activated_courses(course_id INTEGER,user_id INTEGER,FOREIGN KEY (course_id) references courses(course_id),
+										FOREIGN KEY (user_id) references users(user_id));
+INSERT INTO student_activated_courses values(1,2),(1,1),(3,1),(3,5),(2,4),(5,1),(4,5);
+SELECT * from student_activated_courses;
+
+#companu drive table
+CREATE TABLE  company_drive(user_id INTEGER,company_name varchar(20),FOREIGN KEY  (user_id) references users(user_id));
+INSERT company_drive values(1,"google"),(2,"microsoft"),(3,"chubb"),(4,"amazon"),(3,"google"),(5,"amazon");
+select * from company_drive;
+
+#total problems table
+CREATE TABLE  total_problems(domain varchar(20),noofproblems INTEGER);
+INSERT INTO total_problems values("array",308),("numbers",22),("mathematics",192),("strings",196),("companies",99);
+SELECT * from total_problems;
+ALTER TABLE total_problems add constraint primary key(domain);
+
+#codekata table 
+CREATE TABLE codekata(user_id INTEGER,domain varchar(20),solved_problems INTEGER,FOREIGN KEY  (user_id) references users(user_id),FOREIGN KEY  (domain) references total_problems(domain));
+INSERT INTO codekata values(1,"strings",30),(1,"numbers",11),(2,"mathematics",70),(3,"companies",80),(4,"numbers",13),(4,"array",60),(5,"numbers",10);
+SELECT * from codekata;
+
+#tasks table
+CREATE TABLE tasks(user_id INTEGER,domain varchar(20),solved_problems INTEGER,FOREIGN KEY  (user_id) references users(user_id),FOREIGN KEY  (domain) references total_problems(domain));
+INSERT INTO tasks values(1,"strings",50),(1,"numbers",22),(2,"mathematics",99),(3,"companies",99),(4,"numbers",22),(4,"array",60),(5,"numbers",22);
+SELECT * from tasks;
+
+#attendance table
+CREATE TABLE attendance(user_id INTEGER , attendance_per float,FOREIGN KEY  (user_id) references users(user_id));
+INSERT INTO  attendance values(1,85.5),(2,90),(4,88.5),(3,93),(5,75),(6,94);
+select * from attendance;
+
+
+#query 3
+SELECT sum(solved_problems) from codekata where domain="numbers";
+#query 4
+SELECT user_id,count(company_name) from company_drive group by user_id; 
+#query 5
+SELECT s.course_id,c.course_name,s.user_id from student_activated_courses s join courses c where s.course_id=c.course_id;
+#query 6
+SELECT mentor_name from mentor;
+#query 7
+SELECT m.mentor_id,m.mentor_name,count(u.mentor_id) from mentor m,users u where m.mentor_id=u.mentor_id group by m.mentor_id;

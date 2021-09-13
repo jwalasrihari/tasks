@@ -1,4 +1,4 @@
-#task and topic collection
+#Task and Topic Collection
 
 > db.task_topic.insertMany([{
 ...     "Topic_id" : 1,
@@ -63,7 +63,7 @@
 
 
 
-#campus drive collection
+#Campus Drive collection
 
 > db.company_drives.insertMany([{
 ... "Company_name":"Chubb",
@@ -130,7 +130,7 @@
 
 
 
-#codekata collection
+#Codekata collection
 
 > db.codekata.insertMany([{
 ...     "Id" : 1,
@@ -181,6 +181,8 @@
                 ObjectId("613e1a3c33977aac9d8df77a")
         ]
 }
+
+
 
 # Mentor collection
 
@@ -235,7 +237,9 @@
         ]
 }
 
-#users collection
+
+
+#Users collection
 
 > db.users_task.insertMany([
 ...{

@@ -1,0 +1,589 @@
+#task and topic collection
+
+> db.task_topic.insertMany([{
+...     "Topic_id" : 1,
+...     "Topic_name" : "SQL",
+...     "Date" : new Date("2020-10-03"),
+...     "Task" : {
+...                    "Task_id" : 1,
+...                    "Task_name" : "SQL_queries_day1",
+...                    "Task_start" : new Date("2020-10-03")
+...              }
+... },
+... {
+...     "Topic_id" : 2,
+...     "Topic_name" : "SQL",
+...     "Date" : new Date("2020-10-04"),
+...     "Task" : {
+...                    "Task_id" : 2,
+...                    "Task_name" : "SQL_queries_day2",
+...                    "Task_start" : new Date("2020-10-04")
+...              }
+... },
+... {
+...     "Topic_id" : 3,
+...     "Topic_name" : "Mongo",
+...     "Date" : new Date("2020-10-05"),
+...     "Task" : {
+...                    "Task_id" : 3,
+...                    "Task_name" : "mongo_queries_day1",
+...                    "Task_start" : new Date("2020-10-05")
+...              }
+... },
+... {
+...     "Topic_id" : 4,
+...     "Topic_name" : "Mongo",
+...     "Date" : new Date("2020-10-06"),
+...     "Task" : {
+...                    "Task_id" : 4,
+...                    "Task_name" : "mongo_queries_day2",
+...                    "Task_start" : new Date("2020-10-06")
+...              }
+... },
+... {
+...     "Topic_id" : 5,
+...     "Topic_name" : "React",
+...     "Date" : new Date("2020-11-06"),
+...     "Task" : {
+...                    "Task_id" : 5,
+...                    "Task_name" : "React_day1",
+...                    "Task_start" : new Date("2020-11-06")
+...              }
+... }]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613d64053c78261f77ef7b51"),
+                ObjectId("613d64053c78261f77ef7b52"),
+                ObjectId("613d64053c78261f77ef7b53"),
+                ObjectId("613d64053c78261f77ef7b54"),
+                ObjectId("613d64053c78261f77ef7b55")
+        ]
+}
+
+
+
+#campus drive collection
+
+> db.company_drives.insertMany([{
+... "Company_name":"Chubb",
+... "Details":{
+... "date":new Date("2020-10-30"),
+... "Placement_type":["On-Campus"],
+... "Students_attended":["a1","a3","a4","a6","a9","a10"] }
+... },
+... {
+... "Company_name":"Modak",
+... "Details":{
+... "date":new Date("2020-10-20"),
+... "Placement_type":["On-Campus"],
+... "Students_attended":["b1","b3","b4","b6"] }
+... },
+... {
+... "Company_name":"Wipro",
+... "Details":{
+... "date":new Date("2020-10-16"),
+... "Placement_type":["Off-Campus"],
+... "Students_attended":["a1","a4","a6"] }
+... },
+... {
+... "Company_name":"Amazon",
+... "Details":{
+... "date":new Date("2020-09-19"),
+... "Placement_type":["Off-Campus"],
+... "Students_attended":["b1","b2","b3","a4","a5","a6"] }
+... },
+... {
+... "Company_name":"Cognizant",
+... "Details":{
+... "date":new Date("2020-10-3"),
+... "Placement_type":["On-Campus"],
+... "Students_attended":["b1","b2","b3","b4","a7"] }
+... },
+... {
+... "Company_name":"traiz",
+... "Details":{
+... "date":new Date("2020-11-25"),
+... "Placement_type":["On-Campus"],
+... "Students_attended":["C5","C7","C8","C13"] }
+... },
+... {
+... "Company_name":"DXC",
+... "Details":{
+... "date":new Date("2020-10-21"),
+... "Placement_type":["On-Campus"],
+... "Students_attended":["a1","a2","a3","a4","a5","a6"] }
+... }]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613ea1d1e3caad33c4bca8db"),
+                ObjectId("613ea1d1e3caad33c4bca8dc"),
+                ObjectId("613ea1d1e3caad33c4bca8dd"),
+                ObjectId("613ea1d1e3caad33c4bca8de"),
+                ObjectId("613ea1d1e3caad33c4bca8df"),
+                ObjectId("613ea1d1e3caad33c4bca8e0"),
+                ObjectId("613ea1d1e3caad33c4bca8e1")
+        ]
+}
+
+
+
+
+#codekata collection
+
+> db.codekata.insertMany([{
+...     "Id" : 1,
+...     "Name" : "abc1",
+...     "Email" : "abc1@gmail.com",
+...     "Problem_details" : {
+... "All_problems" : 40,
+... "Solved" : 22,
+... "Coins"  : 480
+... }
+... },
+... {
+...     "Id" : 2,
+...     "Name" : "abc2",
+...     "Email" : "abc2@gmail.com",
+...     "Problem_details" : {
+... "All_problems" : 40,
+... "Solved" : 30,
+... "Coins"  : 600
+... }
+... },
+... {
+...     "Id" : 3,
+...     "Name" : "abc3",
+...     "Email" : "abc3@gmail.com",
+...     "Problem_details" : {
+... "All_problems" : 40,
+... "Solved" : 12,
+... "Coins"  : 240
+... }
+... },
+... {
+...     "Id" : 4,
+...     "Name" : "abc4",
+...     "Email" : "abc4@gmail.com",
+...     "Problem_details" : {
+... "All_problems" : 40,
+... "Solved" : 35,
+... "Coins"  : 800
+... }
+... }]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613e1a3c33977aac9d8df777"),
+                ObjectId("613e1a3c33977aac9d8df778"),
+                ObjectId("613e1a3c33977aac9d8df779"),
+                ObjectId("613e1a3c33977aac9d8df77a")
+        ]
+}
+
+# Mentor collection
+
+> db.mentors.insertMany([{
+...       "Mentor_id" : 1,
+...       "Name" : "Mentor 1",
+...       "Branch" : "CSE",
+...       "Mentees":{
+...                     "Mentee_Id":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+...                  }
+... },
+... {
+...       "Mentor_id" : 2,
+...       "Name" : "Mentor 2",
+...       "Branch" : "CE",
+...       "Mentees":{
+...                     "Mentee_Id":[21,22,23,24,25,26,27,28,29,31,21,22,23,24,25]
+...                  }
+... },
+... {
+...       "Mentor_id" : 3,
+...       "Name" : "Mentor 3",
+...       "Branch" : "MECH",
+...       "Mentees":{
+...                     "Mentee_Id":[31,32,33,34,35]
+...                  }
+... },
+... {
+...       "Mentor_id" : 4,
+...       "Name" : "Mentor 4",
+...       "Branch" : "IT",
+...       "Mentees":{
+...                     "Mentee_Id":[41,42,43,44,54]
+...                  }
+... },
+... {
+...       "Mentor_id" : 5,
+...       "Name" : "Mentor 5",
+...       "Branch" : "EEE",
+...       "Mentees":{
+...                     "Mentee_Id":[51,59,52,53,54,55]
+...                  }
+... }]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613e234033977aac9d8df782"),
+                ObjectId("613e234033977aac9d8df783"),
+                ObjectId("613e234033977aac9d8df784"),
+                ObjectId("613e234033977aac9d8df785"),
+                ObjectId("613e234033977aac9d8df786")
+        ]
+}
+
+#users collection
+
+> db.users_task.insertMany([
+...{
+... "task_id":1,
+... "task_name":"design_db",
+... "task_given_data": new Date("2020-10-15"),
+... "details":[
+... {
+... "student_id":1,
+... "submitted_date": new Date("2020-10-16"),
+... "status":"present"
+... },
+... {
+... "student_id":2,
+... "submitted_date": new Date("2020-10-16"),
+... "status":"present"
+... },
+... {
+... "student_id":3,
+... "submitted_date": new Date("2020-10-17"),
+... "status":"present"
+... },
+... {
+... "student_id":4,
+... "submitted_date": new Date("2020-11-03"),
+... "status":"present"
+... },
+... {
+... "student_id":5,
+... "submitted_date": new Date("2020-11-04"),
+... "status":"present"
+... }
+... ]
+... },
+... {
+... "task_id":2,
+... "task_name":"design_db1",
+... "task_given_data": new Date("2020-10-20"),
+... "details":[
+... {
+... "student_id":1,
+... "submitted_date": new Date("2020-10-21"),
+... "status":"present"
+... },
+... {
+... "student_id":2,
+... "submitted_date": new Date("2020-10-21"),
+... "status":"present"
+... },
+... {
+... "student_id":3,
+... "submitted_date": new Date("2020-10-22"),
+... "status":"absent"
+... },
+... {
+... "student_id":4,
+... "submitted_date": new Date("2020-11-21"),
+... "status":"absent"
+... },
+... {
+... "student_id":5,
+... "submitted_date": new Date("2020-11-22"),
+... "status":"absent"
+... }
+... ]
+... },
+... {
+... "task_id":3,
+... "task_name":"design_dbmongo",
+... "task_given_data": new Date("2020-10-03"),
+... "details":[
+... {
+... "student_id":1,
+... "submitted_date": new Date("2020-10-03"),
+... "status":"present"
+... },
+... {
+... "student_id":2,
+... "submitted_date": new Date("2020-10-03"),
+... "status":"present"
+... },
+... {
+... "student_id":3,
+... "submitted_date": new Date("2020-10-03"),
+... "status":"present"
+... },
+... {
+... "student_id":4,
+... "submitted_date": new Date("2020-11-05"),
+... "status":"absent"
+... },
+... {
+... "student_id":5,
+... "submitted_date": new Date("2020-11-07"),
+... "status":"absent"
+... }
+... ]
+... }
+... ]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613ec695f349e190e2bc9b87"),
+                ObjectId("613ec695f349e190e2bc9b88"),
+                ObjectId("613ec695f349e190e2bc9b89")
+        ]
+}
+
+
+
+/* QUERY 1 Find all the topics and tasks which are thought in the month of October */
+
+> db.task_topic.find({
+...                    "$and":[
+...                      {
+...                        "$where" : "this.Date.getMonth()==09"
+...                      },
+...                      {
+...                        "$where" : "this.Task.Task_start.getMonth()==09"
+...                      }
+...                    ]
+...                  },
+...                  {
+					   "_id":0,
+...                    "Topic_name":1,
+...                    "Task.Task_name" :1
+...                  }).pretty();
+{
+        "Topic_name" : "SQL",
+        "Task" : {
+                "Task_name" : "SQL_queries_day1"
+        }
+}
+{
+        "Topic_name" : "SQL",
+        "Task" : {
+                "Task_name" : "SQL_queries_day2"
+        }
+}
+{
+        "Topic_name" : "Mongo",
+        "Task" : {
+                "Task_name" : "mongo_queries_day1"
+        }
+}
+{
+        "Topic_name" : "Mongo",
+        "Task" : {
+                "Task_name" : "mongo_queries_day2"
+        }
+}
+
+
+/* QUERY 2 Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020*/
+
+> db.company_drives.find({"Details.date":{$gt:new Date("2020-10-15"),$lt:new Date("2020-10-31")}}).pretty();
+{
+        "_id" : ObjectId("613ea1d1e3caad33c4bca8db"),
+        "Company_name" : "Chubb",
+        "Details" : {
+                "date" : ISODate("2020-10-30T00:00:00Z"),
+                "Placement_type" : [
+                        "On-Campus"
+                ],
+                "Students_attended" : [
+                        "a1",
+                        "a3",
+                        "a4",
+                        "a6",
+                        "a9",
+                        "a10"
+                ]
+        }
+}
+{
+        "_id" : ObjectId("613ea1d1e3caad33c4bca8dc"),
+        "Company_name" : "Modak",
+        "Details" : {
+                "date" : ISODate("2020-10-20T00:00:00Z"),
+                "Placement_type" : [
+                        "On-Campus"
+                ],
+                "Students_attended" : [
+                        "b1",
+                        "b3",
+                        "b4",
+                        "b6"
+                ]
+        }
+}
+{
+        "_id" : ObjectId("613ea1d1e3caad33c4bca8dd"),
+        "Company_name" : "Wipro",
+        "Details" : {
+                "date" : ISODate("2020-10-16T00:00:00Z"),
+                "Placement_type" : [
+                        "Off-Campus"
+                ],
+                "Students_attended" : [
+                        "a1",
+                        "a4",
+                        "a6"
+                ]
+        }
+}
+{
+        "_id" : ObjectId("613ea1d1e3caad33c4bca8e1"),
+        "Company_name" : "DXC",
+        "Details" : {
+                "date" : ISODate("2020-10-21T00:00:00Z"),
+                "Placement_type" : [
+                        "On-Campus"
+                ],
+                "Students_attended" : [
+                        "a1",
+                        "a2",
+                        "a3",
+                        "a4",
+                        "a5",
+                        "a6"
+                ]
+        }
+}
+
+
+/* QUERY 3 Find all the company drives and students who are appeared for the placement. */
+
+> db.company_drives.find({},{"_id":0,"Company_name":1,"Details.Students_attended":1});
+{ "Company_name" : "Chubb", "Details" : { "Students_attended" : [ "a1", "a3", "a4", "a6", "a9", "a10" ] } }
+{ "Company_name" : "Modak", "Details" : { "Students_attended" : [ "b1", "b3", "b4", "b6" ] } }
+{ "Company_name" : "Wipro", "Details" : { "Students_attended" : [ "a1", "a4", "a6" ] } }
+{ "Company_name" : "Amazon", "Details" : { "Students_attended" : [ "b1", "b2", "b3", "a4", "a5", "a6" ] } }
+{ "Company_name" : "Cognizant", "Details" : { "Students_attended" : [ "b1", "b2", "b3", "b4", "a7" ] } }
+{ "Company_name" : "traiz", "Details" : { "Students_attended" : [ "C5", "C7", "C8", "C13" ] } }
+{ "Company_name" : "DXC", "Details" : { "Students_attended" : [ "a1", "a2", "a3", "a4", "a5", "a6" ] } }
+
+
+/* QUERY 4 Find the number of problems solved by the user in codekata. */
+
+> db.codekata.find({},{"Name":1,"Email":1,"Problem_details.Solved":1}).pretty();
+{
+        "_id" : ObjectId("613e1a3c33977aac9d8df777"),
+        "Name" : "abc1",
+        "Email" : "abc1@gmail.com",
+        "Problem_details" : {
+                "Solved" : 22
+        }
+}
+{
+        "_id" : ObjectId("613e1a3c33977aac9d8df778"),
+        "Name" : "abc2",
+        "Email" : "abc2@gmail.com",
+        "Problem_details" : {
+                "Solved" : 30
+        }
+}
+{
+        "_id" : ObjectId("613e1a3c33977aac9d8df779"),
+        "Name" : "abc3",
+        "Email" : "abc3@gmail.com",
+        "Problem_details" : {
+                "Solved" : 12
+        }
+}
+{
+        "_id" : ObjectId("613e1a3c33977aac9d8df77a"),
+        "Name" : "abc4",
+        "Email" : "abc4@gmail.com",
+        "Problem_details" : {
+                "Solved" : 35
+        }
+}
+
+
+
+/* QUERY 5 Find all the mentors with who has the mentee's count more than 15. */
+
+
+> db.mentors.find({$where:"this.Mentees.Mentee_Id.length >=15"},{_id:0,Name:1,Branch:1});
+{ "Name" : "Mentor 1", "Branch" : "CSE" }
+{ "Name" : "Mentor 2", "Branch" : "CE" }
+
+
+
+/* QUERY 6 Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020 */
+
+> db.users_task.find({ $and:[ {"details.submitted_date":{$gt:new Date("2020-10-15"),$lt:new Date("2020-10-31")}}, {"details.status":"present"} ] }).pretty();
+{
+        "_id" : ObjectId("613ec695f349e190e2bc9b87"),
+        "task_id" : 1,
+        "task_name" : "design_db",
+        "task_given_data" : ISODate("2020-10-15T00:00:00Z"),
+        "details" : [
+                {
+                        "student_id" : 1,
+                        "submitted_date" : ISODate("2020-10-16T00:00:00Z"),
+                        "status" : "present"
+                },
+                {
+                        "student_id" : 2,
+                        "submitted_date" : ISODate("2020-10-16T00:00:00Z"),
+                        "status" : "present"
+                },
+                {
+                        "student_id" : 3,
+                        "submitted_date" : ISODate("2020-10-17T00:00:00Z"),
+                        "status" : "present"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("613ec695f349e190e2bc9b88"),
+        "task_id" : 2,
+        "task_name" : "design_db1",
+        "task_given_data" : ISODate("2020-10-20T00:00:00Z"),
+        "details" : [
+                {
+                        "student_id" : 1,
+                        "submitted_date" : ISODate("2020-10-21T00:00:00Z"),
+                        "status" : "present"
+                },
+                {
+                        "student_id" : 2,
+                        "submitted_date" : ISODate("2020-10-21T00:00:00Z"),
+                        "status" : "present"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("613ec695f349e190e2bc9b89"),
+        "task_id" : 3,
+        "task_name" : "design_dbmongo",
+        "task_given_data" : ISODate("2020-10-03T00:00:00Z"),
+        "details" : [
+                {
+                        "student_id" : 1,
+                        "submitted_date" : ISODate("2020-10-03T00:00:00Z"),
+                        "status" : "present"
+                },
+                {
+                        "student_id" : 2,
+                        "submitted_date" : ISODate("2020-10-03T00:00:00Z"),
+                        "status" : "present"
+                },
+                {
+                        "student_id" : 3,
+                        "submitted_date" : ISODate("2020-10-03T00:00:00Z"),
+                        "status" : "present"
+                }
+        ]
+}

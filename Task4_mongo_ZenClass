@@ -270,7 +270,7 @@
 ... {
 ... "student_id":5,
 ... "submitted_date": new Date("2020-11-04"),
-... "status":"present"
+... "status":"absent"
 ... }
 ... ]
 ... },
@@ -297,7 +297,7 @@
 ... {
 ... "student_id":4,
 ... "submitted_date": new Date("2020-11-21"),
-... "status":"absent"
+... "status":"present"
 ... },
 ... {
 ... "student_id":5,
@@ -526,7 +526,7 @@
 
 /* QUERY 6 Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020 */
 
-> db.users_task.find({ $and:[ {"details.submitted_date":{$gt:new Date("2020-10-15"),$lt:new Date("2020-10-31")}}, {"details.status":"present"} ] }).pretty();
+> db.users_task.find({ $and:[ {"details.submitted_date":{$gt:new Date("2020-10-15"),$lt:new Date("2020-10-31")}}, {"details.status":"absent"} ] }).pretty();
 {
         "_id" : ObjectId("613ec695f349e190e2bc9b87"),
         "task_id" : 1,
@@ -534,19 +534,9 @@
         "task_given_data" : ISODate("2020-10-15T00:00:00Z"),
         "details" : [
                 {
-                        "student_id" : 1,
-                        "submitted_date" : ISODate("2020-10-16T00:00:00Z"),
-                        "status" : "present"
-                },
-                {
-                        "student_id" : 2,
-                        "submitted_date" : ISODate("2020-10-16T00:00:00Z"),
-                        "status" : "present"
-                },
-                {
-                        "student_id" : 3,
-                        "submitted_date" : ISODate("2020-10-17T00:00:00Z"),
-                        "status" : "present"
+                        "student_id" : 5,
+                        "submitted_date" : ISODate("2020-11-14T00:00:00Z"),
+                        "status" : "absent"
                 }
         ]
 }
@@ -557,14 +547,14 @@
         "task_given_data" : ISODate("2020-10-20T00:00:00Z"),
         "details" : [
                 {
-                        "student_id" : 1,
-                        "submitted_date" : ISODate("2020-10-21T00:00:00Z"),
-                        "status" : "present"
+                        "student_id" : 3,
+                        "submitted_date" : ISODate("2020-10-22T00:00:00Z"),
+                        "status" : "absent"
                 },
                 {
-                        "student_id" : 2,
-                        "submitted_date" : ISODate("2020-10-21T00:00:00Z"),
-                        "status" : "present"
+                        "student_id" : 5,
+                        "submitted_date" : ISODate("2020-10-22T00:00:00Z"),
+                        "status" : "absent"
                 }
         ]
 }
@@ -575,19 +565,14 @@
         "task_given_data" : ISODate("2020-10-03T00:00:00Z"),
         "details" : [
                 {
-                        "student_id" : 1,
-                        "submitted_date" : ISODate("2020-10-03T00:00:00Z"),
-                        "status" : "present"
+                        "student_id" : 4,
+                        "submitted_date" : ISODate("2020-10-05T00:00:00Z"),
+                        "status" : "absent"
                 },
                 {
-                        "student_id" : 2,
-                        "submitted_date" : ISODate("2020-10-03T00:00:00Z"),
-                        "status" : "present"
-                },
-                {
-                        "student_id" : 3,
-                        "submitted_date" : ISODate("2020-10-03T00:00:00Z"),
-                        "status" : "present"
+                        "student_id" : 5,
+                        "submitted_date" : ISODate("2020-10-07T00:00:00Z"),
+                        "status" : "absent"
                 }
         ]
 }

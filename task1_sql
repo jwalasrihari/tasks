@@ -58,7 +58,7 @@ select * from attendance;
 
 
 #Query 3 Get number problems solved in codekata by combining the users
-SELECT sum(solved_problems) from codekata where domain="numbers";
+SELECT user_id,user_name,solved_problems from codekata where domain="numbers";
 
 #Query 4 Display the no of company drives attended by a user
 SELECT user_id,count(company_name) from company_drive group by user_id; 

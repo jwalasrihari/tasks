@@ -30,7 +30,7 @@ CREATE TABLE  student_activated_courses(course_id INTEGER,user_id INTEGER,FOREIG
 INSERT INTO student_activated_courses values(1,2),(1,1),(3,1),(3,5),(2,4),(5,1),(4,5);
 SELECT * from student_activated_courses;
 
-#companu drive table
+#company drive table
 CREATE TABLE  company_drive(user_id INTEGER,company_name varchar(20),FOREIGN KEY  (user_id) references users(user_id));
 INSERT company_drive values(1,"google"),(2,"microsoft"),(3,"chubb"),(4,"amazon"),(3,"google"),(5,"amazon");
 select * from company_drive;
@@ -61,7 +61,7 @@ select * from attendance;
 SELECT user_id,user_name,solved_problems from codekata where domain="numbers";
 
 #Query 4 Display the no of company drives attended by a user
-SELECT user_id,count(company_name) from company_drive group by user_id; 
+SELECT u.user_id,u.user_name,count(c.company_name) from company_drive c join users u on u.user_id=c.user_id group by u.user_id,u.user_name; 
 
 #Query 5 Combine and display students_activated_courses and courses for a specific user groping them based on the course
 SELECT s.course_id,c.course_name,s.user_id from student_activated_courses s join courses c where s.course_id=c.course_id;

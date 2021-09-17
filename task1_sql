@@ -57,13 +57,17 @@ INSERT INTO  attendance values(1,85.5),(2,90),(4,88.5),(3,93),(5,75),(6,94);
 select * from attendance;
 
 
-#query 3
+#Query 3 Get number problems solved in codekata by combining the users
 SELECT sum(solved_problems) from codekata where domain="numbers";
-#query 4
+
+#Query 4 Display the no of company drives attended by a user
 SELECT user_id,count(company_name) from company_drive group by user_id; 
-#query 5
+
+#Query 5 Combine and display students_activated_courses and courses for a specific user groping them based on the course
 SELECT s.course_id,c.course_name,s.user_id from student_activated_courses s join courses c where s.course_id=c.course_id;
-#query 6
+
+#Query 6 List all the mentors
 SELECT mentor_name from mentor;
-#query 7
+
+#query 7 list the number of students that are assigned for a mentor
 SELECT m.mentor_id,m.mentor_name,count(u.mentor_id) from mentor m,users u where m.mentor_id=u.mentor_id group by m.mentor_id;
